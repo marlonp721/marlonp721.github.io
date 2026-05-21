@@ -1,5 +1,5 @@
 /* ============================================
-   PORTFOLIO v2 - SPA + iframes
+   PORTFOLIO v2 - SPA
    Marlon Peralta Panduro
    ============================================ */
 
@@ -33,10 +33,7 @@ const translations = {
     'about.fact4': 'Trabajo con metodologías ágiles (Scrum/Kanban)',
 
     'projects.open': 'Abrir ↗',
-    'projects.loading': 'cargando preview...',
-    'projects.blocked.title': 'Vista previa bloqueada por el sitio',
-    'projects.blocked.desc': 'Este sitio tiene políticas de seguridad (X-Frame-Options / CSP) que no permiten incrustarse en otras páginas. Ábrelo en una nueva pestaña para verlo en vivo.',
-    'projects.blocked.cta': 'Abrir sitio →',
+    'projects.coverHint': 'Clic para abrir el sitio ↗',
 
     'contact.cta.title': '¿Hablamos?',
     'contact.cta.desc': 'Estoy abierto a oportunidades freelance, full-time o proyectos puntuales. Escríbeme y te respondo en menos de 24h.',
@@ -71,10 +68,7 @@ const translations = {
     'about.fact4': 'Agile methodologies (Scrum/Kanban)',
 
     'projects.open': 'Open ↗',
-    'projects.loading': 'loading preview...',
-    'projects.blocked.title': 'Preview blocked by site',
-    'projects.blocked.desc': 'This site has security policies (X-Frame-Options / CSP) that prevent it from being embedded. Open it in a new tab to view it live.',
-    'projects.blocked.cta': 'Open site →',
+    'projects.coverHint': 'Click to open site ↗',
 
     'contact.cta.title': "Let's talk",
     'contact.cta.desc': "I'm open to freelance opportunities, full-time roles or one-off projects. Send me an email and I'll reply within 24h.",
@@ -241,6 +235,7 @@ const projects = {
   influgo: {
     name: 'Influgo',
     url: 'https://www.influgo.co/',
+    image: 'assets/projects/influgo.jpg',
     desc: {
       es: 'Marketplace que conecta marcas con influencers a través de campañas y canjes. App web + móvil con chat en tiempo real, pagos y métricas de redes sociales.',
       en: 'Marketplace connecting brands with influencers through campaigns and trades. Web + mobile app with real-time chat, payments and social media metrics.'
@@ -250,6 +245,7 @@ const projects = {
   gobpe: {
     name: 'Gob.pe — Portal del Estado',
     url: 'https://www.gob.pe/',
+    image: 'assets/projects/gobpe.jpg',
     desc: {
       es: 'Portal único oficial del Estado Peruano. Contribuí en funcionalidades del CMS, accesibilidad 100% según Lighthouse y soporte a entidades públicas en su migración al portal.',
       en: 'Official single portal of the Peruvian Government. I contributed to CMS features, 100% Lighthouse accessibility and support for public entities migrating to the portal.'
@@ -259,6 +255,7 @@ const projects = {
   facilita: {
     name: 'Facilita Perú',
     url: 'https://facilita.gob.pe/',
+    image: 'assets/projects/facilita.jpg',
     desc: {
       es: 'Plataforma para que entidades públicas creen formularios digitales para trámites ciudadanos. Implementé módulos de gestión de usuarios y formularios usando APIs de Gob.pe.',
       en: 'Platform for public entities to create digital forms for citizen procedures. I built user management and form modules using Gob.pe APIs.'
@@ -268,6 +265,7 @@ const projects = {
   reclamos: {
     name: 'Libro de Reclamaciones',
     url: 'https://reclamos.servicios.gob.pe/',
+    image: 'assets/projects/reclamos.jpg',
     desc: {
       es: 'Plataforma oficial del Estado Peruano para presentar reclamos ante entidades públicas. Lideré el soporte técnico y desarrollé sistemas de envío automatizado de reclamos.',
       en: 'Official Peruvian Government platform for filing complaints against public entities. I led technical support and built automated complaint forwarding systems.'
@@ -277,6 +275,7 @@ const projects = {
   denuncias: {
     name: 'Denuncias del Estado',
     url: 'https://denuncias.servicios.gob.pe/',
+    image: 'assets/projects/denuncias.jpg',
     desc: {
       es: 'Plataforma del Estado Peruano para que los ciudadanos presenten denuncias a entidades públicas. Soporte técnico, diagnóstico de incidentes y mantenimiento continuo.',
       en: 'Peruvian Government platform for citizens to file reports against public entities. Technical support, incident diagnosis and continuous maintenance.'
@@ -286,6 +285,7 @@ const projects = {
   netzun: {
     name: 'NETZUN',
     url: 'https://netzun.com/',
+    image: 'assets/projects/netzun.jpg',
     desc: {
       es: 'Plataforma B2B de educación corporativa y desarrollo de habilidades. Desarrollo de APIs backend, reportería empresarial y aplicación de TDD.',
       en: 'B2B platform for corporate education and skill development. Backend API development, business reporting and TDD adoption.'
@@ -295,6 +295,7 @@ const projects = {
   sunat: {
     name: 'SUNAT',
     url: 'https://www.sunat.gob.pe/',
+    image: 'assets/projects/sunat.jpg',
     desc: {
       es: 'Superintendencia Nacional de Aduanas y de Administración Tributaria del Perú. Colaboración en integraciones y soporte a sistemas tributarios del Estado Peruano.',
       en: 'National Superintendence of Customs and Tax Administration of Peru. Collaboration on integrations and support for tax systems of the Peruvian Government.'
@@ -324,7 +325,7 @@ function applyLang(lang) {
   });
 
   renderExp(currentExp);
-  renderProj(currentProj, false); // re-render info without reloading iframe
+  renderProj(currentProj);
   startTyping('Marlon Peralta Panduro');
 }
 
@@ -362,9 +363,8 @@ function showSection(name) {
   // If home, replay typing
   if (name === 'home') startTyping('Marlon Peralta Panduro');
 
-  // If projects, load iframe lazily
   if (name === 'projects') {
-    renderProj(currentProj, true);
+    renderProj(currentProj);
   }
 }
 
@@ -390,8 +390,7 @@ function renderExp(key) {
 }
 
 /* ---------- Render Project ---------- */
-let frameTimer = null;
-function renderProj(key, reloadIframe) {
+function renderProj(key) {
   currentProj = key;
   const proj = projects[key];
   if (!proj) return;
@@ -413,46 +412,20 @@ function renderProj(key, reloadIframe) {
   const open = document.getElementById('projOpen');
   if (open) open.href = proj.url;
 
-  const fallbackOpen = document.getElementById('fallbackOpen');
-  if (fallbackOpen) fallbackOpen.href = proj.url;
+  const cover = document.getElementById('projCover');
+  const coverLink = document.getElementById('projCoverLink');
+  if (cover && proj.image) {
+    cover.src = proj.image;
+    cover.alt = `${proj.name} — preview`;
+  }
+  if (coverLink) {
+    coverLink.href = proj.url;
+    coverLink.setAttribute('aria-label', `${proj.name} — ${proj.url}`);
+  }
 
   document.querySelectorAll('.proj-tab').forEach(t => {
     t.classList.toggle('active', t.dataset.proj === key);
   });
-
-  if (reloadIframe) {
-    const iframe = document.getElementById('projIframe');
-    const loader = document.getElementById('frameLoader');
-    const fallback = document.getElementById('frameFallback');
-    if (!iframe) return;
-
-    fallback.classList.remove('visible');
-    loader.classList.remove('hidden');
-    iframe.style.display = 'block';
-    iframe.src = 'about:blank';
-
-    // Use setTimeout to allow about:blank to clear, then set real src
-    setTimeout(() => {
-      iframe.src = proj.url;
-    }, 60);
-
-    // Hide loader once iframe fires onload (only for same-origin or non-blocked sites)
-    let loaded = false;
-    iframe.onload = () => {
-      loaded = true;
-      loader.classList.add('hidden');
-    };
-
-    // Timeout fallback: if iframe doesn't load in 6s, show fallback
-    if (frameTimer) clearTimeout(frameTimer);
-    frameTimer = setTimeout(() => {
-      if (!loaded) {
-        loader.classList.add('hidden');
-        fallback.classList.add('visible');
-        iframe.style.display = 'none';
-      }
-    }, 6000);
-  }
 }
 
 /* ---------- Init ---------- */
@@ -479,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Project tabs
   document.querySelectorAll('.proj-tab').forEach(t => {
-    t.addEventListener('click', () => renderProj(t.dataset.proj, true));
+    t.addEventListener('click', () => renderProj(t.dataset.proj));
   });
 
   // Mobile toggle (sidebar collapse)

@@ -238,18 +238,10 @@
                 <a class="proj-open" id="projOpen" href="#" target="_blank" rel="noopener" data-i18n="projects.open">Abrir ↗</a>
               </div>
               <div class="proj-frame-body">
-                <div class="frame-loader" id="frameLoader">
-                  <span class="prompt-line">$</span> <span data-i18n="projects.loading">cargando preview...</span> <span class="cursor">█</span>
-                </div>
-                <iframe id="projIframe" src="" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="no-referrer" loading="lazy"></iframe>
-                <div class="frame-fallback" id="frameFallback">
-                  <div class="fallback-inner">
-                    <div class="fallback-icon">⊗</div>
-                    <h3 data-i18n="projects.blocked.title">Vista previa bloqueada por el sitio</h3>
-                    <p data-i18n="projects.blocked.desc">Este sitio tiene políticas de seguridad que no permiten incrustarse en otras páginas. Ábrelo en una nueva pestaña para verlo.</p>
-                    <a class="btn btn-primary" id="fallbackOpen" href="#" target="_blank" rel="noopener" data-i18n="projects.blocked.cta">Abrir sitio →</a>
-                  </div>
-                </div>
+                <a class="proj-cover-link" id="projCoverLink" href="#" target="_blank" rel="noopener" aria-label="">
+                  <img id="projCover" src="" alt="" loading="lazy" decoding="async" />
+                  <span class="proj-cover-hint" data-i18n="projects.coverHint">Clic para abrir el sitio ↗</span>
+                </a>
               </div>
             </div>
           </div>
