@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Marlon Peralta Panduro - Software Engineer. Full Stack Developer with experience in Ruby on Rails, React, Node.js, Python, AWS." />
   <meta name="author" content="Marlon Peralta Panduro" />
-  <meta name="keywords" content="Marlon Peralta, Software Engineer, Full Stack Developer, Ruby on Rails, React, Node.js, Python, Peru, Tarapoto" />
   <title>marlon@portfolio:~$</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300ff88'>&gt;_</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,418 +14,356 @@
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
-  <div class="crt-glow" aria-hidden="true"></div>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#hero" class="nav-logo">
-      <span class="prompt">&gt;_</span> marlon<span class="accent">@</span>portfolio
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about" data-i18n="nav.about">./about</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">./experience</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">./projects</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">./skills</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">./contact</a></li>
-    </ul>
-    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-      <span id="langLabel">ES</span> <span class="cursor-mini">|</span> EN
-    </button>
-  </nav>
+  <div class="app">
 
-  <!-- HERO / TERMINAL -->
-  <section class="hero" id="hero">
-    <div class="terminal">
-      <div class="terminal-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="terminal-title">marlon@portfolio: ~</span>
-      </div>
-      <div class="terminal-body">
-        <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cmd">whoami</span></div>
-        <div class="line output" id="typed-name"></div>
-        <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cmd">cat about.txt</span></div>
-        <div class="line output">
-          <span data-i18n="hero.role">Ingeniero de Software | Full Stack Developer</span>
-        </div>
-        <div class="line output">
-          <span data-i18n="hero.stack">Ruby on Rails · React · Node.js · Python · AWS · React Native</span>
-        </div>
-        <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cmd">./status.sh</span></div>
-        <div class="line output status-ok">
-          <span class="status-dot"></span>
-          <span data-i18n="hero.status">Disponible para nuevos proyectos</span>
-        </div>
-        <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cursor">█</span></div>
-      </div>
-    </div>
-
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">Ver proyectos</a>
-      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta.contact">Contáctame</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <h2 class="section-title">
-      <span class="prompt-line">$</span> cat <span class="accent">about.md</span>
-    </h2>
-    <div class="about-grid">
-      <div class="about-photo">
-        <div class="photo-frame">
-          <img src="assets/profile.png" alt="Marlon Peralta" />
-          <div class="photo-overlay"></div>
-        </div>
-        <div class="photo-caption">
-          <span class="prompt-line">[</span> profile.png <span class="prompt-line">]</span>
-        </div>
-      </div>
-      <div class="about-content">
-        <p data-i18n="about.p1">
-          Bachiller en Ingeniería de Sistemas e Informática por la Universidad Nacional de San Martín.
-          Más de <strong class="accent">6 años</strong> diseñando, construyendo y operando plataformas web,
-          móviles y APIs en producción — desde startups privadas hasta sistemas del Estado Peruano que
-          usan millones de ciudadanos.
-        </p>
-        <p data-i18n="about.p2">
-          Me apasiona el código limpio, la arquitectura escalable y la automatización. Lideré soporte
-          técnico para plataformas críticas como <strong>Gob.pe</strong>, <strong>Facilita</strong>,
-          <strong>Denuncias</strong> y <strong>Reclamos</strong>, y construí desde cero la app móvil
-          de <strong>Influgo</strong> publicada en App Store y Google Play.
-        </p>
-        <ul class="about-quickfacts">
-          <li><span class="kbd">▸</span> <span data-i18n="about.fact1">Tarapoto, Perú — Disponible remoto</span></li>
-          <li><span class="kbd">▸</span> <span data-i18n="about.fact2">6+ años en desarrollo full-stack</span></li>
-          <li><span class="kbd">▸</span> <span data-i18n="about.fact3">7+ plataformas en producción</span></li>
-          <li><span class="kbd">▸</span> <span data-i18n="about.fact4">Apps móviles publicadas en stores</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section" id="experience">
-    <h2 class="section-title">
-      <span class="prompt-line">$</span> ls -la <span class="accent">experience/</span>
-    </h2>
-    <div class="timeline">
-
-      <article class="timeline-item">
-        <div class="timeline-date">2025 — 2026</div>
-        <div class="timeline-content">
-          <h3>Influgo <span class="role" data-i18n="exp.influgo.role">Ingeniero de Software</span></h3>
-          <ul>
-            <li data-i18n="exp.influgo.l1">Desarrollo de la plataforma Influgo (Ruby on Rails + React) para gestión de campañas e intercambio entre marcas e influencers.</li>
-            <li data-i18n="exp.influgo.l2">App móvil híbrida iOS/Android con React Native — publicada en App Store y Google Play.</li>
-            <li data-i18n="exp.influgo.l3">APIs REST y WebSockets en Node.js para chat en tiempo real.</li>
-            <li data-i18n="exp.influgo.l4">Infraestructura AWS (Elastic Beanstalk, API Gateway), CI/CD con GitHub Actions y Docker.</li>
-            <li data-i18n="exp.influgo.l5">Integraciones con MercadoPago, TikTok y Meta APIs.</li>
-          </ul>
-          <div class="tags">
-            <span>Ruby on Rails</span><span>React</span><span>React Native</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span><span>Redis</span>
+    <!-- ============== SIDEBAR ============== -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+        <div class="sidebar-logo">
+          <span class="prompt">&gt;_</span>
+          <div>
+            <div class="logo-name">marlon<span class="accent">@</span>dev</div>
+            <div class="logo-tag" data-i18n="sidebar.tag">~/portfolio</div>
           </div>
         </div>
-      </article>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2023 — 2025</div>
-        <div class="timeline-content">
-          <h3>Presidencia del Consejo de Ministros (PCM) <span class="role" data-i18n="exp.pcm2.role">Analista de Desarrollo de Servicios y Plataformas Digitales</span></h3>
-          <ul>
-            <li data-i18n="exp.pcm2.l1">Liderazgo del soporte técnico para Facilita, Denuncias y Libro de Reclamaciones del Estado Peruano.</li>
-            <li data-i18n="exp.pcm2.l2">Módulos de gestión de usuarios y formularios para Facilita usando APIs de Gob.pe.</li>
-            <li data-i18n="exp.pcm2.l3">Sistemas de reportería y envío automatizado de reclamos.</li>
-            <li data-i18n="exp.pcm2.l4">Mejora de CI/CD con GitLab y optimización de Ruby para arquitectura ARM (Apple Silicon).</li>
-          </ul>
-          <div class="tags">
-            <span>Ruby on Rails</span><span>React</span><span>GitLab CI/CD</span><span>AWS</span>
+        <div class="sidebar-profile">
+          <div class="avatar">
+            <img src="assets/profile.png" alt="Marlon Peralta" />
+            <span class="status-dot-mini" title="Online"></span>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name">Marlon Peralta</div>
+            <div class="profile-role" data-i18n="sidebar.role">Software Engineer</div>
+            <div class="profile-loc"><span class="accent">▸</span> Tarapoto, PE</div>
           </div>
         </div>
-      </article>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2023</div>
-        <div class="timeline-content">
-          <h3>NETZUN S.A. <span class="role" data-i18n="exp.netzun.role">Programador Backend</span></h3>
-          <ul>
-            <li data-i18n="exp.netzun.l1">APIs backend para plataforma B2B con Python (Django).</li>
-            <li data-i18n="exp.netzun.l2">Reportería empresarial y mejora de procedimientos almacenados.</li>
-            <li data-i18n="exp.netzun.l3">TDD (Test Driven Development) y revisión de código colaborativa.</li>
-          </ul>
-          <div class="tags">
-            <span>Python</span><span>Django</span><span>TDD</span><span>CI/CD</span>
+        <nav class="sidenav">
+          <button class="nav-item active" data-section="home">
+            <span class="nav-icon">⌂</span> <span data-i18n="nav.home">home</span>
+          </button>
+          <button class="nav-item" data-section="about">
+            <span class="nav-icon">◔</span> <span data-i18n="nav.about">about</span>
+          </button>
+          <button class="nav-item" data-section="experience">
+            <span class="nav-icon">⚙</span> <span data-i18n="nav.experience">experience</span>
+          </button>
+          <button class="nav-item" data-section="projects">
+            <span class="nav-icon">▤</span> <span data-i18n="nav.projects">projects</span>
+          </button>
+          <button class="nav-item" data-section="skills">
+            <span class="nav-icon">⚡</span> <span data-i18n="nav.skills">skills</span>
+          </button>
+          <button class="nav-item" data-section="contact">
+            <span class="nav-icon">✉</span> <span data-i18n="nav.contact">contact</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="socials">
+          <a href="https://github.com/marlonp721" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.3 1.3-3.2-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.9 1.3 2 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/marlonp721/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 1 1 0-3.5 1.8 1.8 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>
+          </a>
+          <a href="mailto:marlonp721@gmail.com" title="Email" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+          </a>
+        </div>
+        <button class="lang-toggle" id="langToggle">
+          <span id="langLabel">ES</span> <span class="cursor-mini">/</span> EN
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============== MAIN ============== -->
+    <main class="main">
+
+      <!-- HOME -->
+      <section class="panel active" data-panel="home">
+        <div class="panel-inner home-panel">
+          <div class="terminal-mini">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">~/welcome.sh</span>
+            </div>
+            <div class="terminal-body">
+              <div class="line"><span class="prompt-line">$</span> <span class="cmd">whoami</span></div>
+              <div class="line output" id="typed-name"></div>
+              <div class="line"><span class="prompt-line">$</span> <span class="cmd">cat role.txt</span></div>
+              <div class="line output">
+                <span data-i18n="home.role">Ingeniero de Software · Full Stack Developer</span>
+              </div>
+              <div class="line"><span class="prompt-line">$</span> <span class="cmd">echo $STATUS</span></div>
+              <div class="line output status-ok">
+                <span class="status-dot"></span>
+                <span data-i18n="home.status">Disponible para nuevos proyectos</span>
+              </div>
+              <div class="line"><span class="prompt-line">$</span> <span class="cursor">█</span></div>
+            </div>
+          </div>
+
+          <div class="home-quickstats">
+            <div class="stat">
+              <div class="stat-num">6<span class="accent">+</span></div>
+              <div class="stat-label" data-i18n="home.stat1">años de experiencia</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">7<span class="accent">+</span></div>
+              <div class="stat-label" data-i18n="home.stat2">plataformas en producción</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">2</div>
+              <div class="stat-label" data-i18n="home.stat3">apps en App Store / Google Play</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">15<span class="accent">+</span></div>
+              <div class="stat-label" data-i18n="home.stat4">tecnologías dominadas</div>
+            </div>
+          </div>
+
+          <div class="home-cta">
+            <button class="btn btn-primary nav-jump" data-section="projects">
+              <span data-i18n="home.cta1">Ver proyectos</span> →
+            </button>
+            <button class="btn btn-ghost nav-jump" data-section="contact">
+              <span data-i18n="home.cta2">Contáctame</span>
+            </button>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2022 — 2023</div>
-        <div class="timeline-content">
-          <h3>Waytech Perú <span class="role" data-i18n="exp.waytech.role">Programador Full Stack</span></h3>
-          <ul>
-            <li data-i18n="exp.waytech.l1">Backend Node.js (Express) + Frontend Vue.js.</li>
-            <li data-i18n="exp.waytech.l2">App móvil Flutter para plataforma de atención psicológica remota.</li>
-            <li data-i18n="exp.waytech.l3">Refactorización del backend y optimización de DB para reportes.</li>
-          </ul>
-          <div class="tags">
-            <span>Node.js</span><span>Vue.js</span><span>Flutter</span>
+      <!-- ABOUT -->
+      <section class="panel" data-panel="about">
+        <div class="panel-inner about-panel">
+          <header class="panel-header">
+            <h2><span class="prompt-line">$</span> cat <span class="accent">about.md</span></h2>
+          </header>
+          <div class="about-grid">
+            <div class="about-photo">
+              <div class="photo-frame">
+                <img src="assets/profile.png" alt="Marlon Peralta" />
+              </div>
+              <div class="photo-caption">[ profile.png ]</div>
+            </div>
+            <div class="about-content">
+              <p data-i18n="about.p1">Bachiller en Ingeniería de Sistemas e Informática por la Universidad Nacional de San Martín. Más de <strong class="accent">6 años</strong> diseñando, construyendo y operando plataformas web, móviles y APIs en producción — desde startups privadas hasta sistemas del Estado Peruano que usan millones de ciudadanos.</p>
+              <p data-i18n="about.p2">Me apasiona el código limpio, la arquitectura escalable y la automatización. Lideré soporte técnico para plataformas críticas como <strong>Gob.pe</strong>, <strong>Facilita</strong>, <strong>Denuncias</strong> y <strong>Reclamos</strong>, y construí desde cero la app móvil de <strong>Influgo</strong>.</p>
+              <ul class="about-facts">
+                <li><span class="kbd">▸</span> <span data-i18n="about.fact1">Tarapoto, Perú — Disponible remoto</span></li>
+                <li><span class="kbd">▸</span> <span data-i18n="about.fact2">6+ años en desarrollo full-stack</span></li>
+                <li><span class="kbd">▸</span> <span data-i18n="about.fact3">Apps móviles publicadas en stores</span></li>
+                <li><span class="kbd">▸</span> <span data-i18n="about.fact4">Trabajo con metodologías ágiles (Scrum/Kanban)</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2022</div>
-        <div class="timeline-content">
-          <h3>PCM — Secretaría de Gobierno Digital <span class="role" data-i18n="exp.pcm1.role">Desarrollador Full Stack</span></h3>
-          <ul>
-            <li data-i18n="exp.pcm1.l1">Desarrollo de funcionalidades del portal Gob.pe con Ruby on Rails.</li>
-            <li data-i18n="exp.pcm1.l2">Páginas con accesibilidad 100% según auditoría Lighthouse.</li>
-            <li data-i18n="exp.pcm1.l3">Migración de Google Analytics a Universal Analytics y mejoras en el CMS.</li>
-          </ul>
-          <div class="tags">
-            <span>Ruby on Rails</span><span>Accessibility</span><span>CMS</span>
+      <!-- EXPERIENCE -->
+      <section class="panel" data-panel="experience">
+        <div class="panel-inner experience-panel">
+          <header class="panel-header">
+            <h2><span class="prompt-line">$</span> ls -la <span class="accent">experience/</span></h2>
+          </header>
+          <div class="exp-layout">
+            <ul class="exp-list" id="expList">
+              <li class="exp-item active" data-exp="influgo">
+                <span class="exp-year">2025-26</span>
+                <span class="exp-co">Influgo</span>
+              </li>
+              <li class="exp-item" data-exp="pcm2">
+                <span class="exp-year">2023-25</span>
+                <span class="exp-co">PCM · Gobierno</span>
+              </li>
+              <li class="exp-item" data-exp="netzun">
+                <span class="exp-year">2023</span>
+                <span class="exp-co">NETZUN</span>
+              </li>
+              <li class="exp-item" data-exp="waytech">
+                <span class="exp-year">2022-23</span>
+                <span class="exp-co">Waytech</span>
+              </li>
+              <li class="exp-item" data-exp="pcm1">
+                <span class="exp-year">2022</span>
+                <span class="exp-co">PCM · Sec. Digital</span>
+              </li>
+              <li class="exp-item" data-exp="asis">
+                <span class="exp-year">2021-22</span>
+                <span class="exp-co">ASIS Tech</span>
+              </li>
+              <li class="exp-item" data-exp="sfpd">
+                <span class="exp-year">2019-21</span>
+                <span class="exp-co">SFPD</span>
+              </li>
+            </ul>
+
+            <div class="exp-detail" id="expDetail">
+              <!-- contenido dinámico inyectado por JS -->
+            </div>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2021 — 2022</div>
-        <div class="timeline-content">
-          <h3>ASIS Technology Partners <span class="role" data-i18n="exp.asis.role">Programador Python / PHP / Linux</span></h3>
-          <ul>
-            <li data-i18n="exp.asis.l1">Procesos ETL para carga masiva de datos empresariales.</li>
-            <li data-i18n="exp.asis.l2">Backend PHP (Laravel) + Frontend Angular y Vue.js.</li>
-            <li data-i18n="exp.asis.l3">Scripts Python de automatización y optimización de consultas SQL.</li>
-          </ul>
-          <div class="tags">
-            <span>Python</span><span>PHP</span><span>Laravel</span><span>Angular</span>
+      <!-- PROJECTS -->
+      <section class="panel" data-panel="projects">
+        <div class="panel-inner projects-panel">
+          <header class="panel-header projects-header">
+            <h2><span class="prompt-line">$</span> ./preview <span class="accent">projects/</span></h2>
+            <div class="proj-tabs" id="projTabs">
+              <button class="proj-tab active" data-proj="influgo">Influgo</button>
+              <button class="proj-tab" data-proj="gobpe">Gob.pe</button>
+              <button class="proj-tab" data-proj="facilita">Facilita</button>
+              <button class="proj-tab" data-proj="reclamos">Reclamos</button>
+              <button class="proj-tab" data-proj="denuncias">Denuncias</button>
+              <button class="proj-tab" data-proj="netzun">NETZUN</button>
+              <button class="proj-tab" data-proj="sunat">SUNAT</button>
+            </div>
+          </header>
+
+          <div class="projects-stage">
+            <div class="proj-info" id="projInfo">
+              <!-- info dinámica -->
+            </div>
+
+            <div class="proj-frame-wrap" id="projFrameWrap">
+              <div class="proj-frame-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <div class="proj-url" id="projUrl">https://...</div>
+                <a class="proj-open" id="projOpen" href="#" target="_blank" rel="noopener" data-i18n="projects.open">Abrir ↗</a>
+              </div>
+              <div class="proj-frame-body">
+                <div class="frame-loader" id="frameLoader">
+                  <span class="prompt-line">$</span> <span data-i18n="projects.loading">cargando preview...</span> <span class="cursor">█</span>
+                </div>
+                <iframe id="projIframe" src="" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="no-referrer" loading="lazy"></iframe>
+                <div class="frame-fallback" id="frameFallback">
+                  <div class="fallback-inner">
+                    <div class="fallback-icon">⊗</div>
+                    <h3 data-i18n="projects.blocked.title">Vista previa bloqueada por el sitio</h3>
+                    <p data-i18n="projects.blocked.desc">Este sitio tiene políticas de seguridad que no permiten incrustarse en otras páginas. Ábrelo en una nueva pestaña para verlo.</p>
+                    <a class="btn btn-primary" id="fallbackOpen" href="#" target="_blank" rel="noopener" data-i18n="projects.blocked.cta">Abrir sitio →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="timeline-item">
-        <div class="timeline-date">2019 — 2021</div>
-        <div class="timeline-content">
-          <h3>Sustainable Forest Project Development <span class="role" data-i18n="exp.sfpd.role">Analista de TI</span></h3>
-          <ul>
-            <li data-i18n="exp.sfpd.l1">Implementación del ERP multiplataforma System Forestera (Django + Vue.js).</li>
-            <li data-i18n="exp.sfpd.l2">Bases de datos MySQL y administración de servidores Linux.</li>
-            <li data-i18n="exp.sfpd.l3">Dashboards de inteligencia empresarial y scripts Bash de automatización.</li>
-          </ul>
-          <div class="tags">
-            <span>Django</span><span>Vue.js</span><span>MySQL</span><span>Linux</span>
+      <!-- SKILLS -->
+      <section class="panel" data-panel="skills">
+        <div class="panel-inner skills-panel">
+          <header class="panel-header">
+            <h2><span class="prompt-line">$</span> cat <span class="accent">stack.json</span></h2>
+          </header>
+          <div class="skills-grid">
+            <div class="skill-block">
+              <h3>// Frontend</h3>
+              <ul>
+                <li>React · Vue.js / Nuxt</li>
+                <li>HTML5 · CSS3 · JavaScript</li>
+                <li>jQuery · Slim templates</li>
+              </ul>
+            </div>
+            <div class="skill-block">
+              <h3>// Backend</h3>
+              <ul>
+                <li>Ruby on Rails</li>
+                <li>Node.js (Express)</li>
+                <li>Python (Django)</li>
+                <li>PHP (Laravel, CodeIgniter)</li>
+              </ul>
+            </div>
+            <div class="skill-block">
+              <h3>// Mobile</h3>
+              <ul>
+                <li>React Native (iOS + Android)</li>
+                <li>Flutter</li>
+                <li>App Store · Google Play</li>
+              </ul>
+            </div>
+            <div class="skill-block">
+              <h3>// Database</h3>
+              <ul>
+                <li>PostgreSQL · MySQL</li>
+                <li>Redis</li>
+                <li>SQL optimization</li>
+              </ul>
+            </div>
+            <div class="skill-block">
+              <h3>// DevOps &amp; Cloud</h3>
+              <ul>
+                <li>AWS (Beanstalk, API Gateway)</li>
+                <li>Docker · Linux</li>
+                <li>GitHub Actions · GitLab CI/CD</li>
+              </ul>
+            </div>
+            <div class="skill-block">
+              <h3>// Tools</h3>
+              <ul>
+                <li>Git · GitHub · Bitbucket · GitLab</li>
+                <li>Scrum · Kanban</li>
+                <li>WebSockets · REST APIs</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </article>
+      </section>
 
-    </div>
-  </section>
+      <!-- CONTACT -->
+      <section class="panel" data-panel="contact">
+        <div class="panel-inner contact-panel">
+          <header class="panel-header">
+            <h2><span class="prompt-line">$</span> ./contact.sh</h2>
+          </header>
+          <div class="contact-wrap">
+            <div class="contact-card">
+              <div class="line"><span class="prompt-line">$</span> <span class="cmd">cat contact.yml</span></div>
+              <div class="contact-list">
+                <div class="contact-row">
+                  <span class="contact-key">email:</span>
+                  <a href="mailto:marlonp721@gmail.com" class="contact-val">marlonp721@gmail.com</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-key">phone:</span>
+                  <a href="tel:+51918276794" class="contact-val">+51 918 276 794</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-key">location:</span>
+                  <span class="contact-val">Tarapoto, San Martín — Perú</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-key">github:</span>
+                  <a href="https://github.com/marlonp721" target="_blank" rel="noopener" class="contact-val">github.com/marlonp721</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-key">linkedin:</span>
+                  <a href="https://www.linkedin.com/in/marlonp721/" target="_blank" rel="noopener" class="contact-val">linkedin.com/in/marlonp721</a>
+                </div>
+              </div>
+              <div class="line"><span class="prompt-line">$</span> <span class="cursor">█</span></div>
+            </div>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <h2 class="section-title">
-      <span class="prompt-line">$</span> git log --oneline <span class="accent">projects/</span>
-    </h2>
-    <p class="section-sub" data-i18n="projects.sub">
-      Plataformas en producción donde he contribuido como desarrollador.
-    </p>
+            <div class="contact-cta-card">
+              <div class="cta-icon">✉</div>
+              <h3 data-i18n="contact.cta.title">¿Hablamos?</h3>
+              <p data-i18n="contact.cta.desc">Estoy abierto a oportunidades freelance, full-time o proyectos puntuales. Escríbeme y te respondo en menos de 24h.</p>
+              <a href="mailto:marlonp721@gmail.com?subject=Oportunidad%20laboral" class="btn btn-primary">
+                <span data-i18n="contact.cta.btn">Enviar email</span> →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="projects-grid">
-
-      <a class="project-card" href="https://www.influgo.co/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">influgo.co</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>Influgo</h3>
-        <p data-i18n="proj.influgo">Marketplace que conecta marcas con influencers a través de campañas y canjes. App web + móvil con chat en tiempo real, pagos y métricas de redes sociales.</p>
-        <div class="tags">
-          <span>Ruby on Rails</span><span>React Native</span><span>AWS</span><span>WebSockets</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://www.gob.pe/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">gob.pe</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>Gob.pe — Portal del Estado Peruano</h3>
-        <p data-i18n="proj.gobpe">Portal único oficial del Estado Peruano. Contribuí en funcionalidades del CMS, accesibilidad 100% según Lighthouse y soporte a entidades públicas en su migración al portal.</p>
-        <div class="tags">
-          <span>Ruby on Rails</span><span>CMS</span><span>A11y</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://facilita.gob.pe/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">facilita.gob.pe</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>Facilita Perú</h3>
-        <p data-i18n="proj.facilita">Plataforma para que entidades públicas creen formularios digitales para trámites ciudadanos. Implementé módulos de gestión de usuarios y formularios usando APIs de Gob.pe.</p>
-        <div class="tags">
-          <span>Ruby on Rails</span><span>React</span><span>API Gob.pe</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://reclamos.servicios.gob.pe/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">reclamos.servicios.gob.pe</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>Libro de Reclamaciones del Estado</h3>
-        <p data-i18n="proj.reclamos">Plataforma oficial del Estado Peruano para presentar reclamos ante entidades públicas. Lideré el soporte técnico y desarrollé sistemas de envío automatizado de reclamos.</p>
-        <div class="tags">
-          <span>Ruby on Rails</span><span>AWS</span><span>Reportería</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://denuncias.servicios.gob.pe/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">denuncias.servicios.gob.pe</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>Denuncias del Estado</h3>
-        <p data-i18n="proj.denuncias">Plataforma del Estado Peruano para que los ciudadanos presenten denuncias a entidades públicas. Soporte técnico, diagnóstico de incidentes y mantenimiento continuo.</p>
-        <div class="tags">
-          <span>Ruby on Rails</span><span>AWS</span><span>GitLab CI</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://netzun.com/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">netzun.com</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>NETZUN</h3>
-        <p data-i18n="proj.netzun">Plataforma B2B de educación corporativa y desarrollo de habilidades. Desarrollo de APIs backend, reportería empresarial y aplicación de TDD.</p>
-        <div class="tags">
-          <span>Python</span><span>Django</span><span>TDD</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://www.sunat.gob.pe/" target="_blank" rel="noopener">
-        <div class="project-header">
-          <span class="project-status">●</span>
-          <span class="project-domain">sunat.gob.pe</span>
-          <span class="project-arrow">↗</span>
-        </div>
-        <h3>SUNAT</h3>
-        <p data-i18n="proj.sunat">Superintendencia Nacional de Aduanas y de Administración Tributaria. Colaboración en integraciones y soporte a sistemas tributarios del Estado Peruano.</p>
-        <div class="tags">
-          <span>Integraciones</span><span>APIs</span><span>Estado</span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <h2 class="section-title">
-      <span class="prompt-line">$</span> cat <span class="accent">stack.json</span>
-    </h2>
-    <div class="skills-grid">
-      <div class="skill-block">
-        <h3>// Frontend</h3>
-        <ul>
-          <li>HTML5 · CSS3 · JavaScript</li>
-          <li>React · Vue.js / Nuxt</li>
-          <li>jQuery · Slim templates</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>// Backend</h3>
-        <ul>
-          <li>Ruby on Rails</li>
-          <li>Node.js (Express)</li>
-          <li>Python (Django)</li>
-          <li>PHP (Laravel, CodeIgniter)</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>// Mobile</h3>
-        <ul>
-          <li>React Native (iOS + Android)</li>
-          <li>Flutter</li>
-          <li>App Store · Google Play</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>// Database</h3>
-        <ul>
-          <li>PostgreSQL · MySQL</li>
-          <li>Redis</li>
-          <li>SQL optimization</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>// DevOps & Cloud</h3>
-        <ul>
-          <li>AWS (Elastic Beanstalk, API Gateway)</li>
-          <li>Docker · Linux</li>
-          <li>GitHub Actions · GitLab CI/CD</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>// Tools</h3>
-        <ul>
-          <li>Git · GitHub · Bitbucket · GitLab</li>
-          <li>Scrum · Kanban</li>
-          <li>WebSockets · REST APIs</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <h2 class="section-title">
-      <span class="prompt-line">$</span> ./contact.sh <span class="accent">--send</span>
-    </h2>
-    <div class="contact-terminal">
-      <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cmd">cat contact.yml</span></div>
-      <div class="contact-list">
-        <div class="contact-row">
-          <span class="contact-key">email:</span>
-          <a href="mailto:marlonp721@gmail.com" class="contact-val">marlonp721@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-key">phone:</span>
-          <a href="tel:+51918276794" class="contact-val">+51 918 276 794</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-key">location:</span>
-          <span class="contact-val">Tarapoto, San Martín — Perú</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-key">github:</span>
-          <a href="https://github.com/marlonp721" target="_blank" rel="noopener" class="contact-val">github.com/marlonp721</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-key">linkedin:</span>
-          <a href="https://www.linkedin.com/in/marlonp721/" target="_blank" rel="noopener" class="contact-val">linkedin.com/in/marlonp721</a>
-        </div>
-      </div>
-      <div class="line"><span class="prompt-line">marlon@portfolio:~$</span> <span class="cursor">█</span></div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>
-      <span class="prompt-line">&gt;</span>
-      <span data-i18n="footer.built">Construido con HTML, CSS y JavaScript — alojado en GitHub Pages</span>
-    </p>
-    <p class="footer-meta">© <span id="year"></span> Marlon Peralta Panduro · v1.0.0</p>
-  </footer>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
