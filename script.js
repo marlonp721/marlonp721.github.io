@@ -18,17 +18,16 @@ const translations = {
 
     'home.role': 'Ingeniero de Software · Full Stack Developer',
     'home.status': 'Disponible para nuevos proyectos',
-    'home.stat1': 'años de experiencia',
     'home.stat2': 'plataformas en producción',
     'home.stat3': 'apps en App Store / Google Play',
     'home.stat4': 'tecnologías dominadas',
     'home.cta1': 'Ver proyectos',
     'home.cta2': 'Contáctame',
 
-    'about.p1': 'Bachiller en Ingeniería de Sistemas e Informática por la Universidad Nacional de San Martín. Más de <strong class="accent">6 años</strong> diseñando, construyendo y operando plataformas web, móviles y APIs en producción — desde startups privadas hasta sistemas del Estado Peruano que usan millones de ciudadanos.',
-    'about.p2': 'Me apasiona el código limpio, la arquitectura escalable y la automatización. Lideré soporte técnico para plataformas críticas como <strong>Gob.pe</strong>, <strong>Facilita</strong>, <strong>Denuncias</strong> y <strong>Reclamos</strong>, y construí desde cero la app móvil de <strong>Influgo</strong>.',
+    'about.p1': 'Desarrollador de Software Full Stack con experiencia en la construcción y mantenimiento de aplicaciones web y móviles escalables. Especializado en <strong>Ruby on Rails</strong>, <strong>React</strong>, <strong>React Native</strong>, <strong>Node.js</strong>, <strong>Python</strong>, <strong>AWS</strong> y <strong>PostgreSQL</strong>. He participado en proyectos para entidades públicas y empresas privadas, desarrollando soluciones enfocadas en rendimiento, escalabilidad y experiencia de usuario.',
+    'about.p2': 'Destaco por mi capacidad de adaptación, aprendizaje continuo, resolución de problemas y trabajo en equipo para entregar soluciones tecnológicas de calidad.',
     'about.fact1': 'Tarapoto, Perú — Disponible remoto',
-    'about.fact2': '6+ años en desarrollo full-stack',
+    'about.fact2': 'Desarrollo full-stack web, móvil y APIs',
     'about.fact3': 'Apps móviles publicadas en stores',
     'about.fact4': 'Trabajo con metodologías ágiles (Scrum/Kanban)',
 
@@ -37,7 +36,8 @@ const translations = {
 
     'contact.cta.title': '¿Hablamos?',
     'contact.cta.desc': 'Estoy abierto a oportunidades freelance, full-time o proyectos puntuales. Escríbeme y te respondo en menos de 24h.',
-    'contact.cta.btn': 'Enviar email'
+    'contact.cta.btn': 'Enviar email',
+    'contact.cta.whatsapp': 'Enviar WhatsApp'
   },
 
   en: {
@@ -53,17 +53,16 @@ const translations = {
 
     'home.role': 'Software Engineer · Full Stack Developer',
     'home.status': 'Available for new projects',
-    'home.stat1': 'years of experience',
     'home.stat2': 'platforms in production',
     'home.stat3': 'apps in App Store / Google Play',
     'home.stat4': 'technologies mastered',
     'home.cta1': 'View projects',
     'home.cta2': 'Contact me',
 
-    'about.p1': 'B.Sc. in Systems Engineering from the National University of San Martín. Over <strong class="accent">6 years</strong> designing, building and operating web, mobile and API platforms in production — from private startups to Peruvian government systems used by millions of citizens.',
-    'about.p2': 'I care about clean code, scalable architecture and automation. I led technical support for critical platforms like <strong>Gob.pe</strong>, <strong>Facilita</strong>, <strong>Denuncias</strong> and <strong>Reclamos</strong>, and built the <strong>Influgo</strong> mobile app from scratch.',
+    'about.p1': 'Full Stack Software Developer with experience building and maintaining scalable web and mobile applications. Specialized in <strong>Ruby on Rails</strong>, <strong>React</strong>, <strong>React Native</strong>, <strong>Node.js</strong>, <strong>Python</strong>, <strong>AWS</strong> and <strong>PostgreSQL</strong>. I have contributed to projects for public institutions and private companies, building solutions focused on performance, scalability and user experience.',
+    'about.p2': 'I stand out for my adaptability, continuous learning, problem-solving skills and teamwork to deliver high-quality technology solutions.',
     'about.fact1': 'Tarapoto, Peru — Remote friendly',
-    'about.fact2': '6+ years in full-stack development',
+    'about.fact2': 'Full-stack development for web, mobile and APIs',
     'about.fact3': 'Mobile apps published in stores',
     'about.fact4': 'Agile methodologies (Scrum/Kanban)',
 
@@ -72,7 +71,8 @@ const translations = {
 
     'contact.cta.title': "Let's talk",
     'contact.cta.desc': "I'm open to freelance opportunities, full-time roles or one-off projects. Send me an email and I'll reply within 24h.",
-    'contact.cta.btn': 'Send email'
+    'contact.cta.btn': 'Send email',
+    'contact.cta.whatsapp': 'Send WhatsApp'
   }
 };
 
@@ -430,6 +430,12 @@ function renderProj(key) {
 
 /* ---------- Init ---------- */
 document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const syncMobileSidebar = () => {
+    if (!sidebar) return;
+    sidebar.classList.toggle('collapsed', window.innerWidth <= 768);
+  };
+
   // Language toggle
   document.getElementById('langToggle')?.addEventListener('click', () => {
     applyLang(currentLang === 'es' ? 'en' : 'es');
@@ -456,7 +462,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Mobile toggle (sidebar collapse)
-  const sidebar = document.querySelector('.sidebar');
   document.getElementById('mobileToggle')?.addEventListener('click', () => {
     sidebar.classList.toggle('collapsed');
   });
@@ -471,6 +476,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial render
+  syncMobileSidebar();
+  window.addEventListener('resize', syncMobileSidebar);
   applyLang(currentLang);
   renderExp(currentExp);
   showSection('home');
